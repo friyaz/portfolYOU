@@ -44,7 +44,7 @@ author:
   twitter           : your_username
 # vimeo             : your_username
 # youtube           : your_channel_name
-
+  feed              :
 
 ### Posts ###
 permalink: /blog/:title
