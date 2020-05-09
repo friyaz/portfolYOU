@@ -7,19 +7,16 @@
         {{ site.data.comments[page.slug] | size | append: ' comments' }}
       {% endif %}
     </h2>
-   {% assign comments = site.data.comments[page.slug] | sort | where_exp: 'comment', 'comment[1]._parent == comment[1]._id' %}
-  
-    {% for comment in comments %}
-      {% assign id          = comment[1]._id %}
-      {% assign parent      = comment[1]._parent %}
-      {% assign avatar      = comment[1].avatar %}
-      {% assign email       = comment[1].email %}
-      {% assign name        = comment[1].name %}
-      {% assign url         = comment[1].url %}
-      {% assign date        = comment[1].date %}
-      {% assign message     = comment[1].message %}
-      {% include comment.html id=id parent=parent avatar=avatar email=email name=name url=url date=date message=message %}
-    {% endfor %}
+{% assign comments = site.data.comments[page.slug] | sort %}
+{% for comment in comments %}
+  {% assign avatar = comment[1].avatar %}
+  {% assign email = comment[1].email %}
+  {% assign name = comment[1].name %}
+  {% assign url = comment[1].url %}
+  {% assign date = comment[1].date %}
+  {% assign message = comment[1].message %}
+  {% include comment.html index=forloop.index avatar=avatar email=email name=name url=url date=date message=message %}
+{% endfor %}
   </div>
 {% endif %}
 
