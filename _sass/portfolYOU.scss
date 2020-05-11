@@ -2,6 +2,7 @@
 
 // Custom Fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('pastie.css');
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "variables",
@@ -15,8 +16,7 @@
         "projects",
         "skills",
         "timeline",
-        "progress",
-        "pastie";
+        "progress";
 a {
   color: $primary
 }
