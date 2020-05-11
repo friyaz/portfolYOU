@@ -28,10 +28,12 @@
     <div class="comment__message">
       {{ include.message | markdownify }}
     </div>
+    {% unless include.parent != include.id or page.comments_locked == true %}
       <div class="comment__reply">
         <a rel="nofollow" href="#comment-{{ include.id }}" onclick="return addComment.moveForm('comment-{{ include.id }}', '{{ include.id }}', 'respond', '{{ include.id }}')">
           &#x2BA9; Reply to {{ include.name }}</a>
       </div>
+    {% endunless %}
   </div>
 </article>
 
