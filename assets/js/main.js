@@ -1,4 +1,5 @@
 // Static comments
+import $ from 'jquery';
 $(function() {
     $("#comment-form").submit(function() {
         var form = this;
